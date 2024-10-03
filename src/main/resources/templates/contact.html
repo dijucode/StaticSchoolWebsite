@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Apply the same background image settings from home */
+        body.contact {
+            background-image: url('/images/home-background.png'); /* Use the same image as home */
+            background-size: cover; /* Cover the entire page */
+            background-attachment: fixed; /* Same as home */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent repeating the image */
+            color: white; /* Ensure text is readable against the background */
+        }
+        .header {
+            background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue bar for better visibility */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .navigation {
+            display: flex;
+            justify-content: flex-end;
+            background-color: rgba(248, 249, 250, 0.8); /* Semi-transparent for better visibility */
+            padding: 10px;
+        }
+        .nav-button {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .page-content {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add semi-transparent background for readability */
+            border-radius: 5px; /* Rounded corners */
+            color: black; /* Ensure readability of content text */
+        }
+        .whatsapp-button {
+            display: inline-block;
+            padding: 10px;
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .whatsapp-button:hover {
+            background-color: #128C7E; /* Darker green on hover */
+        }
+        .social-buttons {
+            margin-top: 20px;
+        }
+        .social-button {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .social-button img {
+            width: 40px; /* Size of the icons */
+            height: 40px; /* Size of the icons */
+        }
+    </style>
+</head>
+<body class="contact"> <!-- Ensure the class is set to contact -->
+<div class="header">
+    <h1>Little Flower School Hata</h1>
+</div>
+<div class="navigation">
+    <a href="/home" class="nav-button">Home</a>
+    <a href="/about" class="nav-button">About</a>
+    <a href="/students" class="nav-button">Students</a>
+</div>
+<div class="page-content">
+    <h2>Contact Us</h2>
+    <p>Address: Baghnath, Hata, Dist: Kushinagar, UP, 274203</p>
+    <h3>Mobile Numbers:</h3>
+    <ul>
+        <li>91-9839-859-489</li>
+        <li>91-9795-806-921</li>
+        <li>91-9721-339-742</li>
+        <li>91-8052-054-261</li>
+    </ul>
+    <h3>Email:</h3>
+    <p>abc@lfs.com</p>
+
+    <h3><strong>Our Official Social Media Handle:</strong></h3>
+    <div class="social-buttons">
+        <a class="social-button" href="https://wa.me/919650956665" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        <a class="social-button" href="https://www.youtube.com/digvijay_nath" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+        </a>
+        <a class="social-button" href="https://x.com/wildcodex" target="_blank">
+            <img src="https://toppng.com/public/uploads/preview/twitter-x-icon-logo-116902890413xbfexhf8l.webp" alt="X (Twitter)">
+        </a>
+    </div>
+</div>
+</body>
+</html>

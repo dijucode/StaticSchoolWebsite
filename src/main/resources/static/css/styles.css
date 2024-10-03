@@ -1,0 +1,86 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-size: cover; /* Use cover for full coverage without distortion */
+}
+
+/* Home Page Background */
+body.home {
+    background: url('/images/home-background.png') no-repeat center center fixed;
+    background-size: cover; /* Adjust this property */
+}
+
+/* About Page Background */
+body.about {
+    background: url('/images/about-background.png') no-repeat center center fixed;
+    background-size: cover; /* Adjust this property */
+}
+
+/* Contact Page Background */
+body.contact {
+    background: url('/images/contact-background.png') no-repeat center center fixed;
+    background-size: cover; /* Adjust this property */
+}
+
+/* Students Page Background */
+body.students {
+    background: url('/images/students-background.png') no-repeat center center fixed;
+    background-size: cover; /* Adjust this property */
+}
+
+header {
+    background-color: rgba(0, 123, 255, 0.8); /* Slightly transparent blue */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed; /* Keeps the header fixed at the top */
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+h1, h2 {
+    margin: 20px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+}
+
+.social-buttons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+iframe {
+    max-width: 50%;
+    width: 100%;
+    height: 360px;
+}
+
+@media (max-width: 768px) {
+    iframe {
+        max-width: 100%;
+    }
+}
+
+/* Add this for smooth scrolling effect */
+html {
+    scroll-behavior: smooth;
+}
