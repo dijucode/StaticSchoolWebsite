@@ -24,16 +24,42 @@
             justify-content: flex-end;
             background-color: #f8f9fa;
             padding: 10px;
+            position: -webkit-sticky; /* Safari support */
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Ensure it stays above other content */
+            box-shadow: 0px 4px 2px -2px gray; /* Optional: Adds a shadow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .navigation.sticky {
+            background-color: #007BFF; /* Change background when sticky */
+            box-shadow: 0px 6px 4px -4px gray;
         }
         .nav-button {
             margin-left: 20px;
             text-decoration: none;
             color: #007BFF;
+            transition: color 0.3s ease;
+        }
+        .navigation.sticky .nav-button {
+            color: white; /* Change color when sticky */
         }
         .page-content {
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.8); /* Optional: white background with transparency for readability */
-            border-radius: 5px; /* Optional: rounded corners for content area */
+            border-radius: 5px;
+        }
+        .text-container {
+            max-width: 70%; /* Maximum width is 70% */
+            margin: 0; /* No margin on left */
+            padding: 20px; /* Optional: Add some padding */
+            padding-right: 20px; /* Leave space on the right */
+            text-align: left; /* Align text to the left */
+        }
+        @media (max-width: 1024px) { /* Adjust this breakpoint based on your design */
+            .text-container {
+                max-width: 90%; /* Optionally, allow more width on smaller screens */
+            }
         }
     </style>
 </head>
@@ -43,23 +69,40 @@
 </div>
 <div class="navigation">
     <a href="/home" class="nav-button">Home</a>
-    <!-- <a href="/about" class="nav-button">About</a> -->
     <a href="/contact" class="nav-button">Contact</a>
     <a href="/students" class="nav-button">Students</a>
 </div>
 
 <div class="page-content">
-    <h1>About Us</h1>
-    <p>Founded in 2002, Little Flower School has been dedicated to providing a nurturing and comprehensive educational experience for students from Kindergarten to Grade 8. Our school is committed to shaping students into well-rounded individuals by honing their physical, social, and intellectual abilities. We follow a student-centric approach where teachers facilitate an active and engaging learning environment.</p>
+    <div class="text-container">
+        <h1>About Us</h1>
+        <p>Founded in 2002, Little Flower School has been dedicated to providing a nurturing and comprehensive educational experience for students from Kindergarten to Grade 8. Our school is committed to shaping students into well-rounded individuals by honing their physical, social, and intellectual abilities. We follow a student-centric approach where teachers facilitate an active and engaging learning environment.</p>
 
-    <h2>Meet Our Director: Mr. Dilip Kumar Srivastava</h2>
-    <p>Mr. Dilip Kumar Srivastava is a highly respected Senior Advocate at the Civil Court with a remarkable career in law, demonstrating exceptional leadership in the legal community. Alongside his successful career, Mr. Srivastava has proven to be an accomplished entrepreneur and visionary leader. Under his guidance, Little Flower School has grown into a prestigious institution, ensuring that students not only receive a quality education but are also imbued with values that prepare them for future success.</p>
+        <h2>Meet Our Director: Mr. Dilip Kumar Srivastava</h2>
+        <p>Mr. Dilip Kumar Srivastava is a highly respected Senior Advocate at the Civil Court with a remarkable career in law, demonstrating exceptional leadership in the legal community. Alongside his successful career, Mr. Srivastava has proven to be an accomplished entrepreneur and visionary leader. Under his guidance, Little Flower School has grown into a prestigious institution, ensuring that students not only receive a quality education but are also imbued with values that prepare them for future success.</p>
 
-    <h2>Our Principal: Mr. Sandeep Singh</h2>
-    <p>As Principal, Mr. Sandeep Singh brings a wealth of experience and dedication to fostering an enriching learning environment. His passion for education and leadership is evident in every aspect of the school. Mr. Singh is committed to making every student’s educational journey a success, encouraging them to develop into confident, thoughtful, and well-prepared individuals for the challenges of tomorrow's world.</p>
+        <h2>Our Principal: Mr. Sandeep Singh</h2>
+        <p>As Principal, Mr. Sandeep Singh brings a wealth of experience and dedication to fostering an enriching learning environment. His passion for education and leadership is evident in every aspect of the school. Mr. Singh is committed to making every student’s educational journey a success, encouraging them to develop into confident, thoughtful, and well-prepared individuals for the challenges of tomorrow's world.</p>
 
-    <h2>Mission</h2>
-    <p>Our mission at Little Flower School is to cultivate a nurturing and inclusive environment that inspires each student to realize their full potential. We strive to equip our students with the knowledge, skills, and values necessary to navigate an ever-evolving global landscape. Through innovative teaching methods and a commitment to holistic development, we aim to empower our students to become compassionate leaders and responsible citizens who contribute positively to society.</p>
+        <h2>Mission</h2>
+        <p>Our mission at Little Flower School is to cultivate a nurturing and inclusive environment that inspires each student to realize their full potential. We strive to equip our students with the knowledge, skills, and values necessary to navigate an ever-evolving global landscape. Through innovative teaching methods and a commitment to holistic development, we aim to empower our students to become compassionate leaders and responsible citizens who contribute positively to society.</p>
+    </div>
 </div>
+
+<!-- Sticky Navigation Script -->
+<script>
+    window.onscroll = function() {stickyNav()};
+
+    var navigation = document.querySelector('.navigation');
+    var sticky = navigation.offsetTop;
+
+    function stickyNav() {
+        if (window.pageYOffset > sticky) {
+            navigation.classList.add('sticky');
+        } else {
+            navigation.classList.remove('sticky');
+        }
+    }
+</script>
 </body>
 </html>

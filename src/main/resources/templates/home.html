@@ -24,19 +24,44 @@
             justify-content: flex-end;
             background-color: #f8f9fa;
             padding: 10px;
+            position: -webkit-sticky; /* Safari support */
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Ensure it stays above other content */
+            box-shadow: 0px 4px 2px -2px gray; /* Optional: Adds a shadow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .navigation.sticky {
+            background-color: #007BFF; /* Change background when sticky */
+            box-shadow: 0px 6px 4px -4px gray;
         }
         .nav-button {
             margin-left: 20px;
             text-decoration: none;
             color: #007BFF;
+            transition: color 0.3s ease;
+        }
+        .navigation.sticky .nav-button {
+            color: white; /* Change color when sticky */
         }
         .page-content {
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.8); /* Optional: white background with transparency for readability */
             border-radius: 5px;
         }
+        .text-container {
+            max-width: 70%; /* Maximum width is 70% */
+            margin: 0; /* No margin on left */
+            padding: 20px; /* Optional: Add some padding */
+            padding-right: 20px; /* Leave space on the right */
+            text-align: left; /* Align text to the left */
+        }
+        @media (max-width: 1024px) { /* Adjust this breakpoint based on your design */
+            .text-container {
+                max-width: 90%; /* Optionally, allow more width on smaller screens */
+            }
+        }
         .proverb {
-            text-align: center; /* Center alignment */
             font-weight: bold;
             margin-bottom: 20px;
         }
@@ -55,9 +80,13 @@
             width: 100%;
             height: 100%;
         }
+        .visitor-counter {
+            text-align: right;
+            margin-top: 40px;
+        }
     </style>
 </head>
-<body class="home"> <!-- Ensure the class is set to home -->
+<body class="home">
 <div class="header">
     <h1>Little Flower School Hata</h1>
 </div>
@@ -68,26 +97,54 @@
 </div>
 
 <div class="page-content">
-    <p class="proverb">“स्वदेशे पूज्यते राजा, विद्वान सर्वत्र पूज्यते।” - Sanskrit Proverb</p> <!-- Centered proverb -->
-    <h1>Empowering Future Leaders Through Education</h1>
+    <div class="text-container">
+        <p class="proverb">“स्वदेशे पूज्यते राजा, विद्वान सर्वत्र पूज्यते।” - Sanskrit Proverb</p>
+        <h1>Empowering Future Leaders Through Education</h1>
 
-    <p>In today’s fast-paced and ever-evolving world, the importance of the right education cannot be overstated. At Little Flower School, we recognize that education is not merely about acquiring knowledge; it is about equipping our students with the skills, values, and resilience needed to navigate a complex landscape. Our curriculum is designed to foster critical thinking, creativity, and adaptability—essential qualities for success in the modern era.</p>
+        <p>In today’s fast-paced and ever-evolving world, the importance of the right education cannot be overstated. At Little Flower School, we recognize that education is not merely about acquiring knowledge; it is about equipping our students with the skills, values, and resilience needed to navigate a complex landscape. Our curriculum is designed to foster critical thinking, creativity, and adaptability—essential qualities for success in the modern era.</p>
 
-    <p>Our commitment to nurturing each student's unique talents creates a culture of integrity and excellence within our institution. We focus on providing unparalleled opportunities for intellectual and personal growth, empowering students to thrive as confident and thoughtful individuals.</p>
+        <p>Our commitment to nurturing each student's unique talents creates a culture of integrity and excellence within our institution. We focus on providing unparalleled opportunities for intellectual and personal growth, empowering students to thrive as confident and thoughtful individuals.</p>
 
-    <h2>Why Choose Us?</h2>
-    <ul>
-        <li><strong>20+ Years of Excellence:</strong> A legacy of outstanding educational achievements and community impact.</li>
-        <li><strong>Inspirational Faculty:</strong> Our dedicated educators are committed to nurturing young minds and fostering a love for learning.</li>
-        <li><strong>State-of-the-Art Facilities:</strong> Modern classrooms designed to provide an interactive and engaging learning environment.</li>
-        <li><strong>Multilingual Environment:</strong> We cultivate an English-speaking atmosphere, ensuring our students are globally competitive.</li>
-        <li><strong>Holistic Development:</strong> Our curriculum promotes intellectual growth and character building, shaping future leaders.</li>
-        <li><strong>Comprehensive Skill Training:</strong> We equip students with essential computer skills, preparing them for a technology-driven world.</li>
-        <li><strong>Innovative Teaching Methods:</strong> Utilizing modern techniques, we enhance learning through engaging audio-visual tools.</li>
-        <li><strong>Personalized Support:</strong> Tailored assistance for every student, ensuring their unique learning needs are met.</li>
-        <li><strong>Extensive Facilities:</strong> Enjoy our playground and well-maintained transportation services, promoting a safe and enjoyable experience.</li>
-    </ul>
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li><strong>20+ Years of Excellence:</strong> A legacy of outstanding educational achievements and community impact.</li>
+            <li><strong>Inspirational Faculty:</strong> Our dedicated educators are committed to nurturing young minds and fostering a love for learning.</li>
+            <li><strong>State-of-the-Art Facilities:</strong> Modern classrooms designed to provide an interactive and engaging learning environment.</li>
+            <li><strong>Multilingual Environment:</strong> We cultivate an English-speaking atmosphere, ensuring our students are globally competitive.</li>
+            <li><strong>Holistic Development:</strong> Our curriculum promotes intellectual growth and character building, shaping future leaders.</li>
+            <li><strong>Comprehensive Skill Training:</strong> We equip students with essential computer skills, preparing them for a technology-driven world.</li>
+            <li><strong>Innovative Teaching Methods:</strong> Utilizing modern techniques, we enhance learning through engaging audio-visual tools.</li>
+            <li><strong>Personalized Support:</strong> Tailored assistance for every student, ensuring their unique learning needs are met.</li>
+            <li><strong>Extensive Facilities:</strong> Enjoy our playground and well-maintained transportation services, promoting a safe and enjoyable experience.</li>
+        </ul>
+    </div>
 </div>
 
+<!-- Visitor Counter Section -->
+<div class="visitor-counter">
+    <div id="sfch9fxunml9rn4ax1rcz8yzjj4tc9e948w"></div>
+    <script type="text/javascript" src="https://counter6.optistats.ovh/private/counter.js?c=h9fxunml9rn4ax1rcz8yzjj4tc9e948w&down=async" async></script>
+    <noscript>
+        <a href="https://www.freecounterstat.com" title="free web page counter">
+            <img src="https://counter6.optistats.ovh/private/freecounterstat.php?c=h9fxunml9rn4ax1rcz8yzjj4tc9e948w" border="0" title="free web page counter" alt="free web page counter">
+        </a>
+    </noscript>
+</div>
+
+<!-- Sticky Navigation Script -->
+<script>
+    window.onscroll = function() {stickyNav()};
+
+    var navigation = document.querySelector('.navigation');
+    var sticky = navigation.offsetTop;
+
+    function stickyNav() {
+        if (window.pageYOffset > sticky) {
+            navigation.classList.add('sticky');
+        } else {
+            navigation.classList.remove('sticky');
+        }
+    }
+</script>
 </body>
 </html>
